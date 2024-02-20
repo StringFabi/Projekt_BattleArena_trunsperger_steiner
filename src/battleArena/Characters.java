@@ -1,5 +1,7 @@
 package battleArena;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Characters {
 		private String name;
 		private int healthPower;
@@ -7,10 +9,10 @@ public class Characters {
 		private int damage;
 		
 		
-		public Characters(String name, int healthPower, boolean specialAbilityActive, int damage) {
+		public Characters(String name, boolean specialAbilityActive, int damage) {
 			super();
 			this.name = name;
-			this.healthPower = healthPower;
+			this.healthPower = 100;
 			this.specialAbilityActive = specialAbilityActive;
 			this.damage = damage;
 		}
@@ -66,10 +68,15 @@ public class Characters {
 		}
 		
 		public void getDamage(int points) {
-			
+		    this.healthPower -= points;
+		}
+
+		public void attack(Character enemy) {
+			this.attackValue(damage);
 		}
 		
-		public void attack(Character enemy) {
-			
+		public void attackValue(int Value) {
+			this.attackValue(ThreadLocalRandom.current().nextInt(20, 25 +1));
 		}
+		
 }
