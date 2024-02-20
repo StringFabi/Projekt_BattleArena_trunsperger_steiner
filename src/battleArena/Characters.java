@@ -65,5 +65,11 @@ public class Characters {
 					+ super.toString() + "]";
 		}
 		
+		public void getDamage(int points) {
+			
+		}
 		
+		public void attack(Character enemy) {
+			
+		}
 }
