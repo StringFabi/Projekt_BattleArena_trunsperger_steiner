@@ -6,10 +6,11 @@ public class Dragon extends Characters{
 		
 		
 		public Dragon(String name, int healthPower, boolean specialAbilityActive, int damage, int attackPower, boolean isSpecialAttackActive) {
-			super(name, healthPower, specialAbilityActive, damage);
-			this.attackPower = attackPower;
-			this.isSpecialAttackActive = isSpecialAttackActive;
+		    super(name, healthPower, specialAbilityActive, damage);
+		    this.attackPower = attackPower;
+		    this.isSpecialAttackActive = isSpecialAttackActive;
 		}
+
 
 
 		public int getAttackPower() {

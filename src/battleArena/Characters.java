@@ -9,7 +9,7 @@ public class Characters {
 		private int damage;
 		
 		
-		public Characters(String name, boolean specialAbilityActive, int damage) {
+		public Characters(String name, int healthPower, boolean specialAbilityActive, int damage) {
 			super();
 			this.name = name;
 			this.healthPower = 100;
