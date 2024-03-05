@@ -48,7 +48,7 @@ public class BattleArena {
 	}
 	
 	public void fight(CharacterRole character1, CharacterRole Character2) {
-		if(pickBeginner == 1) {
+		if(pickBeginner() == 1) {
 			
 		}
 	}
