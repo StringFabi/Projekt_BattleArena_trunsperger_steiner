@@ -1,17 +1,13 @@
 package battleArena;
 
 public class BattleArena {
-
-	int [] character = new int [1];
-	int [] character1;
-	int [] character2;
+	Character [] character = new Character [1];
+	Character [] character1;
+	Character [] character2;
 	
 	
 	public BattleArena(int[] character, int[] character1, int[] character2) {
-		super();
-		this.character = character;
-		this.character1 = character1;
-		this.character2 = character2;
+		
 	}
 	
 	
