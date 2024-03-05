@@ -42,5 +42,14 @@ public class Dragon extends Characters{
 					+ "]";
 		}
 		
+		public int randomNumberGenerator(int min, int max) {
+			int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
+			return random_int;
+		}
+		
+		public int attack() {
+			return randomNumberGenerator(15, 25);
+		}
+		
 		
 }

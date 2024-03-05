@@ -71,10 +71,10 @@ public class Characters {
 		    this.healthPower -= points;
 		}
 
-		public void attack(Character enemy) {
+	/*	public void attack(Character enemy) {
 			this.attackValue(damage);
 		}
-		
+	*/	
 		public void attackValue(int Value) {
 			this.attackValue(ThreadLocalRandom.current().nextInt(20, 25 +1));
 		}
