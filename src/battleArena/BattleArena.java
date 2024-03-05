@@ -33,5 +33,23 @@ public class BattleArena {
 		this.character1 = character1;
 	}
 	
+	public int pickBeginner() {
+		if(Math.random()<0.5) {
+			return 1;
+		} else {
+			return 0;
+		}
+		
+	}
+	//UNFINISHED
+	public void simulateCombat(CharacterRole attacker, CharacterRole victim) {
+		boolean ability = attacker.isSpecialAbilityActive();
+		
+	}
 	
+	public void fight(CharacterRole character1, CharacterRole Character2) {
+		if(pickBeginner == 1) {
+			
+		}
+	}
 }
