@@ -1,14 +1,12 @@
 package battleArena;
 
-public class Dragon extends Characters{
+public class Dragon extends CharacterRole{
 		private int attackPower;
 		private boolean isSpecialAttackActive;
 		
 		
-		public Dragon(String name, int healthPower, boolean specialAbilityActive, int damage, int attackPower, boolean isSpecialAttackActive) {
+		public Dragon(String name, int healthPower, boolean specialAbilityActive, int damage) {
 		    super(name, healthPower, specialAbilityActive, damage);
-		    this.attackPower = attackPower;
-		    this.isSpecialAttackActive = isSpecialAttackActive;
 		}
 
 

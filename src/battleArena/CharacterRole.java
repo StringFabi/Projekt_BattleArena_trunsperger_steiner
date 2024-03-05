@@ -2,15 +2,14 @@ package battleArena;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Characters {
+public class CharacterRole {
 		private String name;
 		private int healthPower;
 		private boolean specialAbilityActive;
 		private int damage;
 		
 		
-		public Characters(String name, int healthPower, boolean specialAbilityActive, int damage) {
-			super();
+		public CharacterRole(String name, int healthPower, boolean specialAbilityActive, int damage) {
 			this.name = name;
 			this.healthPower = 100;
 			this.specialAbilityActive = specialAbilityActive;
