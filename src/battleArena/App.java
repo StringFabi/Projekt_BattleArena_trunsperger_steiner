@@ -10,7 +10,6 @@ public class App {
 		CharacterRole Drache2 = new Dragon ("Drache2", 200, false, 520);
 		
 		BattleArena battle = new BattleArena(Drache1, Drache2);
-		battle.fight(Drache1, Drache2);
+		battle.simulateCombat(Drache1, Drache2);
 	}
-
 }

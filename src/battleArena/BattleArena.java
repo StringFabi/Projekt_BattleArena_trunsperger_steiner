@@ -34,26 +34,35 @@ public class BattleArena {
 	}
 	
 	public int pickBeginner() {
-		if(Math.random()<0.5) {
+		if(Math.random()<=0.5) {
 			return 1;
 		} else {
 			return 0;
-		}
-		
+		}	
 	}
 	//UNFINISHED
-	public void simulateCombat(CharacterRole attacker, CharacterRole victim) {
-		boolean ability = attacker.isSpecialAbilityActive();
-		
+	public void fight(CharacterRole attacker, CharacterRole victim) {
+		System.out.print(attacker.getName()+ " ");
+		System.out.println(attacker.getHealthPower());
+		System.out.print(victim.getName() + " ");
+		System.out.println(victim.getHealthPower());
 	}
 	
-	public void fight(CharacterRole character1, CharacterRole Character2) {
-		CharacterRole beginner;
-		if(pickBeginner() == 1) {
-			beginner = character1;
-		} else {
-			beginner = character2;
+	public void simulateCombat(CharacterRole character1, CharacterRole Character2) {
+			CharacterRole beginner;
+			CharacterRole second;
+				if(pickBeginner() == 1) {
+					beginner = character1;
+					second = character2;
+				} else {
+					beginner = character2;
+					second = character1;
+				}
+			System.out.println("Beginnender Character: " + beginner);
+		while (character1.getHealthPower() > 0 || character2.getHealthPower() > 0){
+			fight(beginner, second);
+			fight(second, beginner);
 		}
-		System.out.println(beginner);
-	} 
+	}
+	
 }
