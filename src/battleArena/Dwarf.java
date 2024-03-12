@@ -30,17 +30,6 @@ public class Dwarf extends CharacterRole{
 		public void setDwarfCoconut(int dwarfCoconut) {
 			this.dwarfCoconut = dwarfCoconut;
 		}
-
-
-		@Override
-		public String toString() {
-			return "Dwarf [calculateAttackPower=" + calculateAttackPower + ", dwarfCoconut=" + dwarfCoconut
-					+ ", getCalculateAttackPower()=" + getCalculateAttackPower() + ", getDwarfCoconut()="
-					+ getDwarfCoconut() + ", getName()=" + getName() + ", getHealthPower()=" + getHealthPower()
-					+ ", isSpecialAbilityActive()=" + isSpecialAbilityActive() + ", getDamage()=" + getDamage()
-					+ ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-					+ "]";
-		}
 		
 		
 		

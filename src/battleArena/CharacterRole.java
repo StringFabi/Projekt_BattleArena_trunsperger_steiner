@@ -59,11 +59,9 @@ public class CharacterRole {
 
 		@Override
 		public String toString() {
-			return "Characters [name=" + name + ", healthPower=" + healthPower + ", specialAbilityActive="
-					+ specialAbilityActive + ", damage=" + damage + ", getName()=" + getName() + ", getHealthPower()="
-					+ getHealthPower() + ", isSpecialAbilityActive()=" + isSpecialAbilityActive() + ", getDamage()="
-					+ getDamage() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
-					+ super.toString() + "]";
+			return "Character Type: " + this.getClass().getName() + "\n"
+					+ "Name: " + this.getName() + "\n"
+					+ "Health: " + this.getHealthPower();
 		}
 		
 		public void getDamage(int points) {

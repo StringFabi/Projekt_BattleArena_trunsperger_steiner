@@ -9,7 +9,7 @@ public class BattleArena {
 	private CharacterRole [] character;
 
 	public BattleArena(CharacterRole  character1, CharacterRole  character2) {
-		this.character = new CharacterRole  [2];
+		this.character = new CharacterRole [3];
 		this.setCharacter1(character1);
 		this.setCharacter2(character2);
 		character[0] = character1;
@@ -48,8 +48,12 @@ public class BattleArena {
 	}
 	
 	public void fight(CharacterRole character1, CharacterRole Character2) {
+		CharacterRole beginner;
 		if(pickBeginner() == 1) {
-			
+			beginner = character1;
+		} else {
+			beginner = character2;
 		}
-	}
+		System.out.println(beginner);
+	} 
 }
