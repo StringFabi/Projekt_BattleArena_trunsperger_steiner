@@ -11,7 +11,7 @@ public class CharacterRole {
 		
 		public CharacterRole(String name, int healthPower, boolean specialAbilityActive, int damage) {
 			this.name = name;
-			this.healthPower = 100;
+			this.healthPower = healthPower;
 			this.specialAbilityActive = specialAbilityActive;
 			this.damage = damage;
 		}
@@ -42,8 +42,14 @@ public class CharacterRole {
 		}
 
 
-		public void setSpecialAbilityActive(boolean specialAbilityActive) {
-			this.specialAbilityActive = specialAbilityActive;
+		public boolean setSpecialAbilityActive(CharacterRole attacker) {
+			if(attacker.isSpecialAbilityActive()) {
+				System.out.println("Special abilty bereits aktiv");
+			}
+			if(!attacker.isSpecialAbilityActive()) {
+				specialAbilityActive = true;
+			}
+			return specialAbilityActive;
 		}
 
 

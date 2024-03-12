@@ -1,5 +1,8 @@
 package battleArena;
 
+import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class BattleArena {
 
 
@@ -41,11 +44,18 @@ public class BattleArena {
 		}	
 	}
 	//UNFINISHED
-	public void fight(CharacterRole attacker, CharacterRole victim) {
-		System.out.print(attacker.getName()+ " ");
-		System.out.println(attacker.getHealthPower());
-		System.out.print(victim.getName() + " ");
-		System.out.println(victim.getHealthPower());
+	
+	Scanner sc = new Scanner(System.in);
+	
+	public void fight(Scanner sc,CharacterRole attacker, CharacterRole victim) {
+		String input = sc.nextLine();
+		if(input.equalsIgnoreCase("activate")) {
+			attacker.setSpecialAbilityActive(attacker);
+			int attackNumber = ThreadLocalRandom.current().nextInt(20,25+1); //Richtige Parameter einfügen
+			victim.setDamage(victim.getHealthPower()-attackNumber);
+					
+		}
+		victim.setHealthPower(victim.getHealthPower()-attacker.getDamage());		
 	}
 	
 	public void simulateCombat(CharacterRole character1, CharacterRole Character2) {
@@ -60,8 +70,12 @@ public class BattleArena {
 				}
 			System.out.println("Beginnender Character: " + beginner);
 		while (character1.getHealthPower() > 0 || character2.getHealthPower() > 0){
-			fight(beginner, second);
-			fight(second, beginner);
+			System.out.println("Beginnender Character bitte Anweisungen eingeben");
+			fight(sc, beginner, second);
+			System.out.println("Beginner HP: " + second.getHealthPower());
+			System.out.println("Nächster Character bitte Anweisungen eingeben");
+			fight(sc, second, beginner);
+			System.out.println("second HP: " + beginner.getHealthPower());
 		}
 	}
 	
