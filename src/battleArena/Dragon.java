@@ -29,17 +29,6 @@ public class Dragon extends CharacterRole{
 		public void setSpecialAttackActive(boolean isSpecialAttackActive) {
 			this.isSpecialAttackActive = isSpecialAttackActive;
 		}
-
-
-		@Override
-		public String toString() {
-			return "Dragon [attackPower=" + attackPower + ", isSpecialAttackActive=" + isSpecialAttackActive
-					+ ", getAttackPower()=" + getAttackPower() + ", isSpecialAttackActive()=" + isSpecialAttackActive()
-					+ ", getName()=" + getName() + ", getHealthPower()=" + getHealthPower()
-					+ ", isSpecialAbilityActive()=" + isSpecialAbilityActive() + ", getDamage()=" + getDamage()
-					+ ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-					+ "]";
-		}
 		
 		public int randomNumberGenerator(int min, int max) {
 			int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
