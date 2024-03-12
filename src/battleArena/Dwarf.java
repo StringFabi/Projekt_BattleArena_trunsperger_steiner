@@ -1,6 +1,6 @@
 package battleArena;
 
-public class Dwarf extends Characters{
+public class Dwarf extends CharacterRole{
 		private int calculateAttackPower;
 		private int dwarfCoconut;
 		
