@@ -46,8 +46,15 @@ public class BattleArena {
 	//UNFINISHED
 	
 	Scanner sc = new Scanner(System.in);
-	
-	public void fight(Scanner sc,CharacterRole attacker, CharacterRole victim) {
+	/**
+	 * 
+	 * @param sc
+	 * @param attacker
+	 * @param victim
+	 * @return 	true wenn ein gültiger Befehl eingegeben wurde, nächster Spieler an der Reihe
+	 * 			false wenn kein gültiger Befehl eingegeben wurde, Spieler nochmal am Zug
+	 */
+	public boolean fight(Scanner sc,CharacterRole attacker, CharacterRole victim) {
 		String input = sc.nextLine();
 		if(input.equalsIgnoreCase("activate")) {
 			attacker.setSpecialAbilityActive(attacker);
@@ -63,11 +70,15 @@ public class BattleArena {
 		} else {
 			System.out.println("Eingabefehler, bitte einen der folgenden Kommandos eingeben: \n\t\t "
 					+ "activate, deactivate, attack");
+			return false;
 		}
-		victim.setHealthPower(victim.getHealthPower()-attacker.getDamage());		
+		victim.setHealthPower(victim.getHealthPower()-attacker.getDamage());
+		return true;		
 	}
 	
 	public void simulateCombat(CharacterRole character1, CharacterRole Character2) {
+			boolean round1 = false;
+			boolean round2 = false;
 			CharacterRole beginner;
 			CharacterRole second;
 				if(pickBeginner() == 1) {
@@ -79,12 +90,21 @@ public class BattleArena {
 				}
 			System.out.println("Beginnender Character: " + beginner);
 		while (character1.getHealthPower() > 0 || character2.getHealthPower() > 0){
-			System.out.println("Beginnender Character bitte Anweisungen eingeben");
-			fight(sc, beginner, second);
-			System.out.println("Beginner HP: " + second.getHealthPower());
-			System.out.println("Nächster Character bitte Anweisungen eingeben");
-			fight(sc, second, beginner);
-			System.out.println("second HP: " + beginner.getHealthPower());
+				System.out.println("Beginnender Character bitte Anweisungen eingeben");
+				round1 = fight(sc, beginner, second);
+				System.out.println(second.getName() + " HP: " + second.getHealthPower());
+				System.out.println("Nächster Character bitte Anweisungen eingeben");
+			if(round1 == true) {
+				round2 = fight(sc, second, beginner);
+				System.out.println(beginner.getName() + "HP: " + beginner.getHealthPower());
+			} else {
+				round1 = fight(sc, beginner, second);
+				System.out.println(second.getName() + "HP: " + beginner.getHealthPower());
+			}
+			if(round2 == false) {
+				round2 = fight(sc, second, beginner);
+				System.out.println(beginner.getName() + "HP: " + beginner.getHealthPower());
+			} 
 		}
 	}
 	
