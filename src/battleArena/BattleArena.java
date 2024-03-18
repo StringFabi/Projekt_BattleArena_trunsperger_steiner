@@ -52,8 +52,13 @@ public class BattleArena {
 		if(input.equalsIgnoreCase("activate")) {
 			attacker.setSpecialAbilityActive(attacker);
 			int attackNumber = ThreadLocalRandom.current().nextInt(20,25+1); //Richtige Parameter einfügen
-			victim.setDamage(victim.getHealthPower()-attackNumber);
-					
+			victim.setHealthPower(victim.getHealthPower()-attackNumber);
+		}
+		else if(input.equalsIgnoreCase("attack")) {
+			victim.setHealthPower(victim.getHealthPower()-attacker.getDamage());
+		} else {
+			System.out.println("Eingabefehler, bitte einen der folgenden Kommandos eingeben: \n\t\t "
+					+ "activate, deactivate, attack");
 		}
 		victim.setHealthPower(victim.getHealthPower()-attacker.getDamage());		
 	}
