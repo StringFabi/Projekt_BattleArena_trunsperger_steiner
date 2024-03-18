@@ -48,10 +48,21 @@ public class CharacterRole {
 			}
 			if(!attacker.isSpecialAbilityActive()) {
 				specialAbilityActive = true;
+				System.out.println("Special ability akiviert");
 			}
 			return specialAbilityActive;
 		}
 
+		public boolean resetSpecialAbilityActive(CharacterRole attacker) {
+			if(attacker.isSpecialAbilityActive()) {
+				specialAbilityActive = false;
+				System.out.println("Special abilty deaktiviert");
+			}
+			if(!attacker.isSpecialAbilityActive()) {
+				System.out.println("Special ability bereits deaktiviert");
+			}
+			return specialAbilityActive;
+		}
 
 		public int getDamage() {
 			return damage;

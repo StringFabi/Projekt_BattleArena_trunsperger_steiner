@@ -53,6 +53,10 @@ public class BattleArena {
 			attacker.setSpecialAbilityActive(attacker);
 			int attackNumber = ThreadLocalRandom.current().nextInt(20,25+1); //Richtige Parameter einfügen
 			victim.setHealthPower(victim.getHealthPower()-attackNumber);
+			victim.setHealthPower(victim.getHealthPower()-attacker.getDamage());
+		}
+		else if(input.equals("deactivate") && attacker.isSpecialAbilityActive()==true) {
+			attacker.resetSpecialAbilityActive(attacker);
 		}
 		else if(input.equalsIgnoreCase("attack")) {
 			victim.setHealthPower(victim.getHealthPower()-attacker.getDamage());
