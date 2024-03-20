@@ -87,6 +87,22 @@ public class BattleArena {
 		victim.setHealthPower(victim.getHealthPower()-attacker.getDamage());
 		return true;		
 	}
+	/**
+	 * Hilfsmethode um den Gewinner eines Kampfes zu ermitteln
+	 * @param c1 Charakter 1
+	 * @param c2 Charakter 2
+	 */
+	public String determineWinner(CharacterRole c1, CharacterRole c2) {
+		String winner;
+		if(c1.getHealthPower()>c2.getHealthPower()) {
+			System.out.println(c1.getName() + " Gewinnt");
+			winner = c1.getName();
+		} else {
+			System.out.println(c2.getName() + " Gewinnt");
+			winner = c2.getName();
+		}
+		return winner;
+	}
 	
 	/**
 	 * Simulates a combat between the two characters
@@ -106,10 +122,11 @@ public class BattleArena {
 					second = character1;
 				}
 			System.out.println("Beginnender Character: " + beginner);
-		while (character1.getHealthPower() > 0 || character2.getHealthPower() > 0){
-			fight(beginner, second);
-			fight(second, beginner);
-
+		
+		while (second.getHealthPower() > 0 || beginner.getHealthPower() > 0){
+			if (second.getHealthPower() <= 0 || beginner.getHealthPower() <= 0) {
+				determineWinner(second, beginner);
+			}
 				System.out.println("Beginnender Character bitte Anweisungen eingeben");
 				round1 = fight(sc, beginner, second);
 				System.out.println(second.getName() + " HP: " + second.getHealthPower());
@@ -118,6 +135,9 @@ public class BattleArena {
 				round2 = fight(sc, second, beginner);
 				System.out.println(beginner.getName() + "HP: " + beginner.getHealthPower());
 			} else {
+				if (second.getHealthPower() <= 0 || beginner.getHealthPower() <= 0) {
+					determineWinner(second, beginner);
+				}
 				round1 = fight(sc, beginner, second);
 				System.out.println(second.getName() + "HP: " + beginner.getHealthPower());
 			}
@@ -125,8 +145,10 @@ public class BattleArena {
 				round2 = fight(sc, second, beginner);
 				System.out.println(beginner.getName() + "HP: " + beginner.getHealthPower());
 			} 
-
-		}
+			if (second.getHealthPower() <= 0 || beginner.getHealthPower() <= 0) {
+				determineWinner(second, beginner);
+			}
+		} 
 	}
 	
 }
