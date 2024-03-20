@@ -8,7 +8,6 @@ public class Dwarf extends CharacterRole{
 		public Dwarf(String name, int healthPower, boolean specialAbilityActive, int damage, int calculateAttackPower) {
 			super(name, healthPower, specialAbilityActive, damage);
 			this.calculateAttackPower = calculateAttackPower;
-			this.dwarfCoconut = dwarfCoconut;
 		}
 
 
