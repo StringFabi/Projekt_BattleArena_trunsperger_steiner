@@ -11,7 +11,10 @@ public class Dwarf extends CharacterRole{
 			this.dwarfCoconut = dwarfCoconut;
 		}
 
-
+/**
+ * getter and setter
+ * @return
+ */
 		public int getCalculateAttackPower() {
 			return calculateAttackPower;
 		}

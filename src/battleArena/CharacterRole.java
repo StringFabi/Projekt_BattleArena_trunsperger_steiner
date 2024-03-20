@@ -16,6 +16,10 @@ public class CharacterRole {
 			this.damage = damage;
 		}
 
+		/**
+		 * getter and setter
+		 * @return
+		 */
 
 		public String getName() {
 			return name;
@@ -48,10 +52,25 @@ public class CharacterRole {
 			}
 			if(!attacker.isSpecialAbilityActive()) {
 				specialAbilityActive = true;
+				System.out.println("Special ability akiviert");
 			}
 			return specialAbilityActive;
 		}
-
+/**
+ * Deactivates the special ability of the attacker
+ * @param attacker
+ * @return
+ */
+		public boolean resetSpecialAbilityActive(CharacterRole attacker) {
+			if(attacker.isSpecialAbilityActive()) {
+				specialAbilityActive = false;
+				System.out.println("Special abilty deaktiviert");
+			}
+			if(!attacker.isSpecialAbilityActive()) {
+				System.out.println("Special ability bereits deaktiviert");
+			}
+			return specialAbilityActive;
+		}
 
 		public int getDamage() {
 			return damage;
@@ -78,6 +97,10 @@ public class CharacterRole {
 			this.attackValue(damage);
 		}
 	*/	
+		/**
+		 * Sets the attack value of the character
+		 * @param Value
+		 */
 		public void attackValue(int Value) {
 			this.attackValue(ThreadLocalRandom.current().nextInt(20, 25 +1));
 		}
