@@ -18,7 +18,7 @@ public class BattleArena {
 		character[1] = character2;
 		character[2] = winner;
 	}
-
+ 
 	/**
 	 * getter and setter
 	 * @return
