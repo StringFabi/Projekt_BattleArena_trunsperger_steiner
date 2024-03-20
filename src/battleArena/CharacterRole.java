@@ -95,7 +95,7 @@ public class CharacterRole {
 
 	/*	public void attack(Character enemy) {
 			this.attackValue(damage);
-		}
+		} 
 	*/	
 		/**
 		 * Sets the attack value of the character
