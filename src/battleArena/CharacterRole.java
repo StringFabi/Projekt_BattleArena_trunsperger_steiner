@@ -8,7 +8,6 @@ public class CharacterRole {
 		private boolean specialAbilityActive;
 		private int damage;
 		
-		
 		public CharacterRole(String name, int healthPower, boolean specialAbilityActive, int damage) {
 			this.name = name;
 			this.healthPower = healthPower;
