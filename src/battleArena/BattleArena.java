@@ -5,6 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class BattleArena {
 
+	
 	private CharacterRole character1;
 	private CharacterRole character2;
 	private CharacterRole winner;
