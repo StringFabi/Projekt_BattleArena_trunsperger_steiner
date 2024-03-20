@@ -2,7 +2,6 @@ package battleArena;
 
 public class Dwarf extends CharacterRole{
 		private int calculateAttackPower;
-		private int dwarfCoconut;
 		
 		
 		public Dwarf(String name, int healthPower, boolean specialAbilityActive, int damage, int calculateAttackPower) {
